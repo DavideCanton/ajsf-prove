@@ -4,10 +4,14 @@
     "type": "object",
     "properties": {
       "first_name": {
-        "type": "string"
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 50
       },
       "last_name": {
-        "type": "string"
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 50
       },
       "address": {
         "type": "object",
@@ -127,19 +131,52 @@
   },
   "layout": [
     {
-      "type": "fieldset",
+      "type": "flex",
+      "flex-flow": "row wrap",
       "items": [
         {
           "key": "first_name",
           "type": "text",
           "placeholder": "First Name"
         },
-        "last_name",
         {
-          "key": "birthday",
-          "type": "date",
-          "placeholder": "Birth Date",
-          "maxDate": "$$TODAY$$"
+          "key": "last_name",
+          "type": "text",
+          "placeholder": "Last Name"
+        }
+      ]
+    },
+    {
+      "key": "birthday",
+      "type": "date",
+      "placeholder": "Birth Date",
+      "maxDate": "$$TODAY$$"
+    },
+    {
+      "key": "phone_numbers",
+      "title": "Phone Numbers",
+      "type": "array",
+      "listItems": 1,
+      "items": [
+        {
+          "type": "div",
+          "display": "flex",
+          "flex-direction": "row",
+          "items": [
+            {
+              "key": "phone_numbers[].type",
+              "type": "select",
+              "flex": "1 1 50px",
+              "notitle": true,
+              "placeholder": "Type"
+            },
+            {
+              "key": "phone_numbers[].number",
+              "flex": "4 4 200px",
+              "notitle": true,
+              "placeholder": "Phone Number"
+            }
+          ]
         }
       ]
     }
