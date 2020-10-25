@@ -73,14 +73,11 @@ export interface Form1Model {
       | "WI"
       | "WY";
     zip_code?: string;
-    [k: string]: unknown;
   };
   birthday: string;
   notes?: string;
   phone_numbers?: {
     type: "cell" | "home" | "work";
     number: string;
-    [k: string]: unknown;
   }[];
-  [k: string]: unknown;
 }
