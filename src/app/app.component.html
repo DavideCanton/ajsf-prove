@@ -1,21 +1,7 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <json-schema-form
-        #form1
-        [loadExternalAssets]="false"
-        [schema]="form1Schema.schema"
-        [layout]="form1Schema.layout"
-        [(data)]="form1Schema.data"
-        [options]="{ addSubmit: false }"
-        framework="bootstrap-4"
-      >
-      </json-schema-form>
-    </div>
-    <div class="col">
-      <pre>{{ form1.onChanges | async | json }}</pre>
-      <pre>{{ form1.validationErrors | async | json }}</pre>
-      <pre>{{ form1.isValid | async | json }}</pre>
-    </div>
-  </div>
+<div>
+  <app-my-form></app-my-form>
+</div>
+<hr>
+<div>
+  <app-my-form></app-my-form>
 </div>

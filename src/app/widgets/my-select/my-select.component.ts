@@ -1,7 +1,7 @@
 import { buildTitleMap, JsonSchemaFormService, TitleMapItem } from '@ajsf/core';
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { CustomWidget } from 'src/app/widget';
+import { CustomWidget } from 'app/widgets/widget';
 
 
 @Component({

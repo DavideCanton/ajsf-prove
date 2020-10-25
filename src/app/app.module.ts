@@ -6,17 +6,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { MySelectComponent } from 'src/app/my-select/my-select.component';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MyDatepickerComponent } from './my-datepicker/my-datepicker.component';
+import { AppRoutingModule } from 'app/app-routing.module';
+import { AppComponent } from 'app/app.component';
+import { MyFormComponent } from 'app/my-form/my-form.component';
+import { MyDatepickerComponent } from 'app/widgets/my-datepicker/my-datepicker.component';
+import { MySelectComponent } from 'app/widgets/my-select/my-select.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyDatepickerComponent,
     MySelectComponent,
+    MyFormComponent,
   ],
   imports: [
     BrowserModule,

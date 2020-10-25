@@ -2,7 +2,7 @@ import { JsonSchemaFormService } from '@ajsf/core';
 import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { AbstractControl, ValidatorFn, Validators } from '@angular/forms';
 import { NgbDateAdapter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import { CustomWidget } from 'src/app/widget';
+import { CustomWidget } from 'app/widgets/widget';
 
 
 @Injectable()

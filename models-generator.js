@@ -17,9 +17,10 @@ matches.forEach((m) => {
 
   const modelName = name + "Model";
   console.info("Model name: " + modelName);
+  const parent = path.dirname(m);
 
   compile(schema, modelName).then((generatedCode) => {
-    const out = BASE + "/" + paramCase(name) + ".model.ts";
+    const out = parent + "/" + paramCase(name) + ".model.ts";
     console.info("Writing to " + out + "...");
 
     const newSourceCode = removeIndexer(generatedCode);
