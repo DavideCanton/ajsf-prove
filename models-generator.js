@@ -1,5 +1,27 @@
 const { compile } = require("json-schema-to-typescript");
-const { schema } = require("./src/app/form-1.json");
 const fs = require("fs");
+const glob = require("glob");
+const path = require("path");
+const { paramCase } = require("change-case");
 
-compile(schema, "Form1Model").then((ts) => fs.writeFileSync("./src/app/form-1.model.ts", ts));
+const BASE = "src/app";
+
+const root = path.join(BASE, "**/*.json");
+
+glob(root, {}, (error, matches) => {
+  matches.forEach((m) => {
+    console.info("Found file: " + m);
+
+    const jsonPath = "./" + m;
+    const { schema, name } = require(jsonPath);
+
+    const modelName = name + "Model";
+    console.info("Model name: " + modelName);
+
+    compile(schema, modelName).then((ts) => {
+      const out = BASE + "/" + paramCase(name) + ".model.ts";
+      console.info("Writing to " + out + "...");
+      fs.writeFileSync(out, ts);
+    });
+  });
+});

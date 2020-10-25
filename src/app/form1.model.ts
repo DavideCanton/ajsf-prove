@@ -75,7 +75,7 @@ export interface Form1Model {
     zip_code?: string;
     [k: string]: unknown;
   };
-  birthday?: string;
+  birthday: string;
   notes?: string;
   phone_numbers?: {
     type: "cell" | "home" | "work";
